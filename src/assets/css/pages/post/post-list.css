@@ -1,0 +1,47 @@
+.filter-bar {
+    padding: 0px 10px;
+}
+
+.post-list-btn {
+    margin: auto;
+}
+
+.post-list-btn:hover {
+    text-decoration: none;
+}
+
+.operation-btn {
+    margin: 5px;
+}
+
+.detail-row {
+    height: 30px;
+}
+
+.list-title {
+    margin-left: 38%;
+}
+
+.detail-btn {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 13px;
+    background-color: blue;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.detail-btn:hover,
+.destroy-btn:hover {
+    opacity: 0.5;
+}
+
+.destroy-btn {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 13px;
+    background-color: red;
+    text-decoration: none;
+    color: white;
+}
