@@ -1,0 +1,107 @@
+.clearFix:after {
+    content: "";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+
+.contact {
+    margin: 20px 0;
+}
+
+.contact-icon {
+    padding-right: 10px;
+}
+
+.contact-icon2 {
+    padding-right: 30px;
+}
+
+.detail-container {
+    width: 85%;
+    margin: 0 auto;
+    background-color: #F6F6F6;
+    border: 2px solid #F6F6F6;
+}
+
+.left {
+    float: left;
+    width: 35%;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.right {
+    padding-top: 10px;
+    width: 65%;
+    float: right;
+    background-color: white;
+}
+
+.detail-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 60%;
+}
+
+.detail-name {
+    padding: 20px 0 5px 0;
+    font-size: 23px;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.contact-data {
+    padding: 10px;
+}
+
+.details-contact {
+    padding: 20px 0 10px 0;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.education,
+.diploma-certification,
+.job-experience,
+.programming-skill {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.education-title {
+    font-size: 19px;
+    font-weight: bold;
+    padding-left: 10px;
+    width: 35%;
+    float: left;
+}
+
+.education-data {
+    width: 65%;
+    font-size: 18px;
+    padding-left: 30px;
+    float: left;
+}
+
+.language-title {
+    font-size: 18px;
+    font-weight: bold;
+    width: 20%;
+    text-align: left;
+}
+
+.language-data {
+    width: 70%;
+    font-size: 18px;
+    padding-left: 30px;
+}

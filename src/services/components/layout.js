@@ -19,7 +19,9 @@ export default {
             this.$store
                 .dispatch("logout")
                 .then(() => {
-                    this.$router.push({ name: "home" });
+                    this.$router.push({
+                        name: "home",
+                    });
                 })
                 .catch((err) => {
                     console.log(err);

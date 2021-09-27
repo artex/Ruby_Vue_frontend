@@ -36,6 +36,7 @@ export default {
             ],
             postList: [],
             showList: [],
+            keyword: null,
         };
     },
     computed: {
@@ -61,14 +62,13 @@ export default {
     },
     methods: {
         /**
-         * This is to filter posts of datatable.
+         * This is to delete posts of datatable.
          * @returns void
          */
         deleteApplicant(id) {
-            console.log(id)
-
             if (confirm("Do you really want to delete?")) {
-                this.$axios.delete("api/applicant/destroy?id=" + id)
+                this.$axios
+                    .delete("/destroy?id=" + id)
                     .then(() => {
                         this.$axios
                             .get("/api/applicant")
@@ -80,22 +80,22 @@ export default {
                                 console.log(err);
                             });
                     })
-                    .catch(error => {
+                    .catch((error) => {
                         console.log(error);
-                    })
+                    });
             }
         },
-        details() {
-
-        },
+        /**
+         * This is to filter posts of datatable.
+         * @returns void
+         */
         filterPosts() {
             this.showList = this.postList.filter((post) => {
                 return (
-                    post.name.includes(this.keyword) ||
+                    post.name.toLowerCase().includes(this.keyword.toLowerCase()) ||
                     post.phone_no1.includes(this.keyword) ||
                     post.email.includes(this.keyword) ||
                     post.bachelor_university.includes(this.keyword)
-
                 );
             });
         },

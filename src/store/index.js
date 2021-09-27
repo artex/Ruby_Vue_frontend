@@ -36,19 +36,21 @@ export default new Vuex.Store({
         login({ commit }, credentials) {
             return axios.post("/auth/login", credentials)
                 .then(data => {
-                    // console.log("hello DATA")
-                    // console.log(data)
                     commit("setUserData", data);
                 })
                 .catch(err => {
                     commit("setErrorData", err.response.data.error)
                 });
         },
+        /**
+         * confirm
+         * validate user data and set "sendData" to "applicantData" state 
+         * @param { object } sendData applicant data from Home Page
+         * @returns { object } object is either data or error
+         */
         confirm({ commit }, sendData) {
-            // console.log(sendData.profile_photo)
             return axios.post("api/applicant/confirm", sendData)
                 .then(() => {
-                    // console.log(data)
                     commit("applicantData", sendData)
                 }).catch(err => {
                     console.log(err.response.data)
@@ -57,31 +59,41 @@ export default new Vuex.Store({
         },
         filestore({ commit }, file) {
             commit("storeFile", file)
-                // console.log(file);
         },
-        logout({ commit }) {
-            // return axios.post("/auth/logout", credentials).then(() => {
-            //     commit("setUserData", null);
-            // });
-            commit("setUserData", null);
 
+        /**
+         * logout
+         * set "setUserData" to null when logout
+         */
+        logout({ commit }) {
+            commit("setUserData", null);
         },
+
+        /**
+         * clear
+         * set "setUserData" to null when clear Applicant form data
+         */
         clear({ commit }) {
             commit("setUserData", null);
         },
+
+        /**
+         * createPost
+         * Save data to database then set "applicantData" and "storeFile" states to null
+         * @param { object } formData Applicant data from Confrim Page
+         * @return void
+         */
         createPost({ commit }, formData) {
             try {
                 return axios.post("/api/applicant/create", formData)
                     .then(data => {
-                        console.log(data)
+                        console.log(data);
                         commit("applicantData", null);
                         commit("storeFile", null)
-
                     })
                     .catch(err => {
                         console.log(err)
                     });
-
             } catch (e) {
                 console.error(e);
             }

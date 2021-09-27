@@ -1,15 +1,15 @@
 <template>
-<Layout />
+  <Layout />
 </template>
 
 <script>
-import Layout from './components/Layout';
+  import Layout from './components/Layout';
 
-export default {
+  export default {
     name: 'App',
 
     components: {
-        Layout,
+      Layout,
     },
-};
+  };
 </script>
