@@ -49,7 +49,7 @@ export default {
             }
         },
     },
-    mounted() {
+    beforeCreate() {
         this.$axios
             .get("/api/applicant")
             .then((response) => {
@@ -63,6 +63,7 @@ export default {
     methods: {
         /**
          * This is to delete posts of datatable.
+         * @param {number} id data to delete in database
          * @returns void
          */
         deleteApplicant(id) {

@@ -8,7 +8,7 @@
 }
 
 .contact {
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .contact-icon {
@@ -53,13 +53,53 @@
     font-weight: bold;
     width: 60%;
     margin: 0 auto;
-    margin-top: 20px;
     border-bottom: 1px solid black;
     text-align: center;
 }
 
-.contact-data {
+.contact-data,
+.contact-data-real {
     padding: 10px;
+}
+
+.contact-data-real {
+    text-align: left;
+}
+
+.icon-left {
+    text-align: left;
+    display: block;
+    width: 10%;
+    margin: 0 7%;
+    float: left;
+    padding: 5px 0;
+}
+
+.icon-left1 {
+    display: block;
+    width: 25%;
+    margin: 0 7%;
+    float: left;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.icon-right {
+    display: block;
+    width: 70%;
+    float: left;
+    padding: 5px 0;
+}
+
+.icon-right1 {
+    display: block;
+    width: 60%;
+    float: left;
+    padding: 5px 0;
+    font-size: 18px;
+    padding-left: 30px;
 }
 
 .details-contact {
@@ -75,7 +115,7 @@
 .job-experience,
 .programming-skill {
     width: 90%;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .education-title {
@@ -93,15 +133,10 @@
     float: left;
 }
 
-.language-title {
-    font-size: 18px;
-    font-weight: bold;
-    width: 20%;
-    text-align: left;
-}
-
-.language-data {
-    width: 70%;
-    font-size: 18px;
-    padding-left: 30px;
+.education,
+.diploma-certification,
+.job-experience,
+.programming-skill {
+    margin-top: 20px;
+    margin-bottom: 15px;
 }

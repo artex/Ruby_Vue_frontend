@@ -1,24 +1,26 @@
 <template>
   <div>
     <h1 class="confirm">Please Confirm Your Data Again!!</h1>
-    <v-form ref="form" @submit.prevent="submit" lazy-validation>
+    <v-form ref="form" @submit.prevent="createApplicantData" lazy-validation>
       <div class="form">
-        <v-toolbar-title class="confirmheader secondary">
+        <v-toolbar-title class="confirmheader primary">
           <span class="header-title">Personal Information</span>
         </v-toolbar-title>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <p class="title1">Name</p>
-          <p class="data">{{ this.confirmData.name }}</p>
+          <p class="data">{{ this.confirmApplicantInfo.name }}</p>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title2">Profile Photo</span>
@@ -32,46 +34,51 @@
               style="width: 200px"
           /></span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Date Of Birth</span>
           <span class="data">{{ this.$store.state.applicant.date }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Phone Number</span>
           <span class="data">{{ this.$store.state.applicant.phone_no1 }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Phone Number 2</span>
           <span class="data">{{ this.$store.state.applicant.phone_no2 }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Email</span>
           <span class="data">{{ this.$store.state.applicant.email }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Current Address</span>
@@ -79,10 +86,11 @@
             this.$store.state.applicant.current_address
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Hometown Address</span>
@@ -90,13 +98,14 @@
             this.$store.state.applicant.hometown_address
           }}</span>
         </v-alert>
-        <v-toolbar-title class="confirmheader secondary">
+        <v-toolbar-title class="confirmheader primary">
           <span class="header-title">Education Background</span>
         </v-toolbar-title>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Bachelor University</span>
@@ -104,10 +113,11 @@
             this.$store.state.applicant.bachelor_university
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Bachelor Year</span>
@@ -115,10 +125,11 @@
             this.$store.state.applicant.bachelor_year
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Bachelor Degree</span>
@@ -126,10 +137,11 @@
             this.$store.state.applicant.bachelor_degree
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Master University</span>
@@ -137,10 +149,11 @@
             this.$store.state.applicant.master_university
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Master Year</span>
@@ -148,10 +161,11 @@
             this.$store.state.applicant.master_year
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Master Degree</span>
@@ -159,10 +173,11 @@
             this.$store.state.applicant.master_degree
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Diploma Name</span>
@@ -170,10 +185,11 @@
             this.$store.state.applicant.diploma_name
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Other Certification</span>
@@ -181,10 +197,11 @@
             this.$store.state.applicant.certificate
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Programming Skills</span>
@@ -194,40 +211,44 @@
             }}</span
           >
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">English Skills</span>
           <span class="data">{{ this.$store.state.applicant.english }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Japanese Skills</span>
           <span class="data">{{ this.$store.state.applicant.japanese }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Other Skills</span>
           <span class="data">{{ this.$store.state.applicant.other }}</span>
         </v-alert>
-        <v-toolbar-title class="confirmheader secondary">
+        <v-toolbar-title class="confirmheader primary">
           <span class="header-title">Experience</span>
         </v-toolbar-title>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Internship Info</span>
@@ -235,10 +256,11 @@
             this.$store.state.applicant.internship_info
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Job Experience</span>
@@ -246,10 +268,11 @@
             this.$store.state.applicant.job_experience
           }}</span>
         </v-alert>
-        <v-alert
+        <v-alert 
+          class="confirm-data-change"
           border="left"
           colored-border
-          color="secondary accent-4"
+          color="primary accent-4"
           elevation="2"
         >
           <span class="title1">Total Experience Year</span>
@@ -259,7 +282,7 @@
         </v-alert>
       </div>
       <div class="btn">
-        <v-btn color="error" class="mr-4" @click="clear">
+        <v-btn color="error" class="mr-4" @click="clearApplicantInfo">
           Cancel
         </v-btn>
         <v-btn type="submit" color="success" class="mr-4">
@@ -270,6 +293,6 @@
   </div>
 </template>
 
-<script src="../services/pages/Confirm.js"></script>
+<script src="../services/pages/confirm.js"></script>
 
 <style src="../assets/css/pages/confirm.css"></style>

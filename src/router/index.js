@@ -1,13 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
 import Login from "../pages/user/Login";
-import PostList from "../pages/post/PostList";
+import PostList from "../pages/applicant/ApplicantList";
 import store from "../store";
 import Home from "../pages/Home";
 import Confirm from "../pages/Confirm";
 import Success from "../pages/Success";
-import Details from "../pages/post/Postdetails";
+import Details from "../pages/applicant/Applicantdetails";
 
 Vue.use(VueRouter);
 
@@ -20,8 +19,8 @@ const routes = [
     },
     // Post Lists route
     {
-        path: "/post/list",
-        name: "post-list",
+        path: "/applicants",
+        name: "applicant-list",
         component: PostList,
     },
     // Confirm route
@@ -44,14 +43,14 @@ const routes = [
     },
     // Details route
     {
-        path: "/detail/:id",
-        name: "post-details",
+        path: "/applicants/:id",
+        name: "applicant-details",
         component: Details,
     },
     // Delete route
     {
         path: "/destroy/:id",
-        name: "post-destroy",
+        name: "applicant-destroy",
     },
 ];
 
@@ -75,15 +74,15 @@ router.beforeEach((to, from, next) => {
         to.name != "home" &&
         to.name != "confirm" &&
         to.name != "success" &&
-        to.name != "post-details"
+        to.name != "applicant-details"
     ) {
         return next("/login");
     }
     next();
-    if (loggedIn && to.name == "home") {
-        return next("/post/list");
+    if (loggedIn && (to.name == "home" || to.name == "login")) {
+        return next("/applicants");
     }
-    if (!loggedIn && to.name == "post-details") {
+    if (!loggedIn && to.name == "applicant-details") {
         return next("/");
     }
 });

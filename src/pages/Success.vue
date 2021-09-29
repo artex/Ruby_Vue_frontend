@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 class="confirm">Your Data Sent Successfuly</h1>
+    <h1 class="confirm">Your Data Sent Successfuly.</h1>
     <div class="btn">
-      <v-btn color="error" class="mr-4" @click="clear">
-        Cancel
+      <v-btn color="error" class="mr-4" @click="successApplicant">
+        BACK
       </v-btn>
     </div>
   </div>
@@ -11,7 +11,12 @@
 <script>
 export default {
   methods: {
-    clear() {
+
+    /**
+     * Back Btn to home page after sent data
+     * @retrun void
+     */
+    successApplicant() {
       this.$router.push({
         name: "home",
       });

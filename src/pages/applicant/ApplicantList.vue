@@ -22,7 +22,7 @@
       <v-data-table :headers="headers" :items="showList">
         <template v-slot:[`item.name`]="{ item }">
           <router-link
-            :to="`/detail/${item.id}`"
+            :to="`/applicants/${item.id}`"
             :key="item.id"
             v-if="item.name"
             >{{ item.name }}</router-link
@@ -31,7 +31,7 @@
         <template v-slot:[`item.operation`]="{ item }">
           <v-row>
             <div class="operation-btn">
-              <router-link :to="`/detail/${item.id}`" class="detail-btn"
+              <router-link :to="`/applicants/${item.id}`" class="detail-btn"
                 >DETAIL</router-link
               >
             </div>
@@ -45,6 +45,6 @@
   </v-card>
 </template>
 
-<script src="../../services/post/post-list.js"></script>
+<script src="../../services/applicant/applicant-list.js"></script>
 
-<style scoped src="../../assets/css/pages/post/post-list.css"></style>
+<style scoped src="../../assets/css/pages/applicant/applicant-list.css"></style>

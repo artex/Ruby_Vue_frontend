@@ -13,6 +13,8 @@ export default {
                 this.applicant = applicantData.data.applicant;
                 this.dob = applicantData.data.dob;
             })
-            .catch();
+            .catch((err) => {
+                console.log(err);
+            });
     },
 };

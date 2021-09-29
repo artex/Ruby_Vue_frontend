@@ -8,28 +8,28 @@
         <v-icon class="contact-icon">event_note</v-icon>
         <span>{{ dob }}</span>
       </div>
-      <div class="contact">
+      <div class="contact clearFix">
         <h3 class="details-contact">CONTACT</h3>
         <div>
-          <div class="contact-data">
-            <v-icon class="contact-icon">phone</v-icon>
-            <span>{{ applicant.phone_no1 }}</span>
+          <div class="contact-data-real clearFix">
+            <v-icon class="icon-left contact-icon">phone</v-icon>
+            <span class="icon-right">{{ applicant.phone_no1 }}</span>
           </div>
-          <div class="contact-data">
-            <v-icon class="contact-icon">phone</v-icon>
-            <span>{{ applicant.phone_no2 }}</span>
+          <div class="contact-data-real clearFix">
+            <v-icon class="icon-left contact-icon">phone</v-icon>
+            <span class="icon-right">{{ applicant.phone_no2 }}</span>
           </div>
-          <div class="contact-datas">
-            <v-icon class="contact-icon">email</v-icon>
-            <span>{{ applicant.email }}</span>
+          <div class="contact-data-real clearFix">
+            <v-icon class="icon-left contact-icon">email</v-icon>
+            <span class="icon-right">{{ applicant.email }}</span>
           </div>
-          <div class="contact-data">
-            <v-icon class="contact-icon">home</v-icon>
-            <span>{{ applicant.current_address }}</span>
+          <div class="contact-data-real clearFix">
+            <v-icon class="icon-left contact-icon">home</v-icon>
+            <span class="icon-right">{{ applicant.current_address }}</span>
           </div>
-          <div class="contact-data">
-            <v-icon class="contact-icon">location_city</v-icon>
-            <span>{{ applicant.hometown_address }}</span>
+          <div class="contact-data-real clearFix">
+            <v-icon class="icon-left contact-icon">location_city</v-icon>
+            <span class="icon-right">{{ applicant.hometown_address }}</span>
           </div>
         </div>
       </div>
@@ -37,17 +37,17 @@
         <h3 class="details-contact">
           <v-icon class="contact-icon">language</v-icon>Language Skills
         </h3>
-        <div class="contact-data">
-          <span class="language-title">English</span>
-          <span class="language-data">{{ applicant.english }}</span>
+        <div class="contact-data-real clearFix">
+          <span class="language-title icon-left1">English</span>
+          <span class="language-data icon-right1">{{ applicant.english }}</span>
         </div>
-        <div class="contact-data">
-          <span class="language-title">Japanese</span>
-          <span class="language-data">{{ applicant.japanese }}</span>
+        <div class="contact-data-real clearFix">
+          <span class="language-title icon-left1">Japanese</span>
+          <span class="language-data icon-right1">{{ applicant.japanese }}</span>
         </div>
-        <div class="contact-data">
-          <span class="language-title">Others</span>
-          <span class="language-data">{{ applicant.other }}</span>
+        <div class="contact-data-real clearFix">
+          <span class="language-title icon-left1">Others</span>
+          <span class="language-data icon-right1">{{ applicant.other }}</span>
         </div>
       </div>
     </div>
@@ -119,6 +119,6 @@
   </div>
 </template>
 
-<script src="../../services/post/post-details.js"></script>
+<script src="../../services/applicant/applicant-details.js"></script>
 
-<style scoped src="../../assets/css/pages/post/post-details.css"></style>
+<style scoped src="../../assets/css/pages/applicant/applicant-details.css"></style>

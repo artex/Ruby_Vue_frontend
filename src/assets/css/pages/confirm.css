@@ -5,8 +5,8 @@
 }
 
 .confirmheader {
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     margin-bottom: 10px;
     font-size: 22px;
     font-weight: bold;
@@ -34,4 +34,8 @@
     width: 640px;
     float: left;
     font-size: 18px;
+}
+
+.confirm-data-change {
+    margin-top: -21px;
 }

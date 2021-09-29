@@ -3,10 +3,10 @@
     <v-form
       ref="form"
       v-model="valid"
-      @submit.prevent="confirm"
+      @submit.prevent="confirmApplicantInfo"
       lazy-validation
     >
-      <v-toolbar-title class="title secondary">
+      <v-toolbar-title class="title primary">
         <span class="header-title">Personal Infromation</span>
       </v-toolbar-title>
       <v-card class="mx-auto px-14 py-8">
@@ -18,6 +18,7 @@
           required
         ></v-text-field>
 
+        <span class="errorMsg1">{{ this.errImage }}</span>
         <v-file-input
           v-model="applicant.profile_photo"
           label="upload Profile"
@@ -106,7 +107,7 @@
 
         <v-textarea
           v-model="applicant.current_address"
-          background-color="grey lighten-2"
+          background-color="grey lighten-5"
           color="black"
           label="Current Address"
           :counter="255"
@@ -118,7 +119,7 @@
         <v-textarea
           class="last"
           v-model="applicant.hometown_address"
-          background-color="grey lighten-2"
+          background-color="grey lighten-5"
           color="black"
           :counter="255"
           :rules="homeRules"
@@ -126,7 +127,7 @@
           no-resize
         ></v-textarea>
       </v-card>
-      <v-toolbar-title class="title secondary">
+      <v-toolbar-title class="title primary">
         <span class="header-title">Education background</span>
       </v-toolbar-title>
       <v-card class="mx-auto px-14 py-8">
@@ -243,14 +244,14 @@
           label="Other Language Skill"
         ></v-text-field>
       </v-card>
-      <v-toolbar-title class="title secondary">
+      <v-toolbar-title class="title primary">
         <span class="header-title">Experience</span>
       </v-toolbar-title>
       <v-card class="mx-auto px-14 py-3">
-        <v-checkbox label="secondary" color="secondary"></v-checkbox>
+        <v-checkbox label="Has Job Experience" color="secondary"></v-checkbox>
         <v-textarea
           v-model="applicant.internship_info"
-          background-color="grey lighten-2"
+          background-color="grey lighten-5"
           color="black"
           :counter="255"
           :rules="internRules"
@@ -259,7 +260,7 @@
         ></v-textarea>
         <v-textarea
           v-model="applicant.job_experience"
-          background-color="grey lighten-2"
+          background-color="grey lighten-5"
           color="black"
           :counter="255"
           :rules="jobexpRules"
@@ -280,8 +281,8 @@
         </v-btn>
         <v-btn
           type="submit"
-          :disabled="!valid"
-          color="success"
+          :disabled="!valid || (errImage!=null)"
+          color="primary"
           class="mr-4"
           @click="validate"
         >

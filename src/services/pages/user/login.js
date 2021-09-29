@@ -28,7 +28,7 @@ export default {
                 })
                 .then(() => {
                     this.error = this.$store.state.error;
-                    this.$router.push({ name: "post-list" });
+                    this.$router.push({ name: "applicant-list" });
                 })
                 .catch((err) => {
                     this.error = err.response.data.errors.message;

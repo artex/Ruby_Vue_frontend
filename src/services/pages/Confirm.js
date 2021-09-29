@@ -6,14 +6,13 @@ export default {
         };
     },
     methods: {
-
-        /** 
+        /**
          * clear
-         * cancel function when click "cancel" in confirm page 
+         * cancel function when click "cancel" in confirm page
          * @return void
          */
-        clear() {
-            this.$store.dispatch("clear");
+        clearApplicantInfo() {
+            this.$store.dispatch("clearApplicantInfo");
             this.$router.push({
                 name: "home",
             });
@@ -24,30 +23,32 @@ export default {
          * Confirmed function when click "confirm" in confirm page
          * @return void
          */
-        submit() {
+        createApplicantData() {
             let formData = new FormData();
-            if (this.confirmData) {
-                formData.append("filename", this.confirmData.profile_photo);
-                Object.entries(this.confirmData).forEach(([key, value]) => {
+            if (this.confirmApplicantInfo) {
+                formData.append("filename", this.confirmApplicantInfo.profile_photo);
+                Object.entries(this.confirmApplicantInfo).forEach(([key, value]) => {
                     formData.append(key, value);
                 });
                 formData.append(
                     "programming",
-                    this.confirmData.programming_language +
+                    this.confirmApplicantInfo.programming_language +
                     ":" +
-                    this.confirmData.programming_level
+                    this.confirmApplicantInfo.programming_level
                 );
-                formData.append("profile_photo", this.confirmData.profile_photo.name);
+                formData.append(
+                    "profile_photo",
+                    this.confirmApplicantInfo.profile_photo.name
+                );
             }
-            // console.log(formData);
-            this.$store.dispatch("createPost", formData);
+            this.$store.dispatch("createApplicantData", formData);
             this.$router.push({
                 name: "success",
             });
         },
     },
     computed: {
-        confirmData() {
+        confirmApplicantInfo() {
             return this.$store.state.applicant;
         },
     },
